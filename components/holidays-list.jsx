@@ -33,28 +33,23 @@ const HolidaysList = () => {
   ]
 
   return (
-    <div className="bg-white p-4 lg:p-5 rounded-lg shadow-sm">
-      <div className="flex justify-between items-center mb-3 lg:mb-4">
-        <h3 className="font-semibold text-sm lg:text-base">Holidays</h3>
-        <span className="text-xs lg:text-sm text-blue-600">August</span>
+    <div className="card">
+      <div className="card-header">
+        <h3 className="card-title">Holidays</h3>
+        <span className="card-subtitle">August</span>
       </div>
 
-      <div className="space-y-3 lg:space-y-4">
+      <div className="holidays-list">
         {holidays.map((holiday, index) => (
-          <div key={index} className="flex items-center">
-            <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-orange-100 flex items-center justify-center mr-2 lg:mr-3 flex-shrink-0">
-              <span className="text-sm lg:text-lg">{holiday.icon}</span>
+          <div key={index} className="holiday-item">
+            <div className="holiday-icon">
+              <span className="holiday-icon-symbol">{holiday.icon}</span>
             </div>
-            <div className="flex-1 min-w-0">
-              <p className="font-medium text-sm lg:text-base truncate">{holiday.name}</p>
-              <p className="text-xs text-gray-500">{holiday.day}</p>
+            <div className="holiday-details">
+              <p className="holiday-name">{holiday.name}</p>
+              <p className="holiday-day">{holiday.day}</p>
             </div>
-            <div className="text-xs text-gray-500 text-right">
-              <span className="hidden sm:inline">{holiday.date}</span>
-              <span className="sm:hidden">
-                {holiday.date.split(" ")[0]} {holiday.date.split(" ")[1]}
-              </span>
-            </div>
+            <div className="holiday-date">{holiday.date}</div>
           </div>
         ))}
       </div>

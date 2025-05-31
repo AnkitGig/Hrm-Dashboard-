@@ -1,30 +1,30 @@
 const AttendanceSummary = () => {
   return (
-    <div className="bg-white p-4 lg:p-5 rounded-lg shadow-sm">
-      <div className="flex justify-between items-center mb-3 lg:mb-4">
-        <h3 className="font-semibold text-sm lg:text-base">Attendance Summary</h3>
-        <span className="text-xs lg:text-sm text-blue-600">August</span>
+    <div className="card">
+      <div className="card-header">
+        <h3 className="card-title">Attendance Summary</h3>
+        <span className="card-subtitle">August</span>
       </div>
 
-      <div className="flex flex-col space-y-2 mb-3 lg:mb-4">
-        <div className="flex items-center">
-          <span className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-green-500 mr-2"></span>
-          <span className="text-xs lg:text-sm">Present - 26</span>
+      <div className="attendance-stats">
+        <div className="stat-item">
+          <span className="stat-indicator present"></span>
+          <span className="stat-text">Present - 26</span>
         </div>
-        <div className="flex items-center">
-          <span className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-yellow-500 mr-2"></span>
-          <span className="text-xs lg:text-sm">Half Day - 1</span>
+        <div className="stat-item">
+          <span className="stat-indicator half-day"></span>
+          <span className="stat-text">Half Day - 1</span>
         </div>
-        <div className="flex items-center">
-          <span className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-red-500 mr-2"></span>
-          <span className="text-xs lg:text-sm">Leave - 3</span>
+        <div className="stat-item">
+          <span className="stat-indicator leave"></span>
+          <span className="stat-text">Leave - 3</span>
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <div className="relative w-24 h-24 lg:w-32 lg:h-32">
+      <div className="chart-container">
+        <div className="chart">
           {/* This is a simplified version of the circular chart */}
-          <svg viewBox="0 0 100 100" className="w-full h-full">
+          <svg viewBox="0 0 100 100" width="100%" height="100%">
             <circle cx="50" cy="50" r="40" fill="none" stroke="#e6e6e6" strokeWidth="12" />
             <circle
               cx="50"
@@ -38,10 +38,10 @@ const AttendanceSummary = () => {
               transform="rotate(-90 50 50)"
             />
           </svg>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-sm lg:text-lg font-semibold">Total Days</div>
-              <div className="text-lg lg:text-xl font-bold">30</div>
+          <div className="chart-center">
+            <div className="chart-label">
+              <div className="chart-label-title">Total Days</div>
+              <div className="chart-label-value">30</div>
             </div>
           </div>
         </div>
